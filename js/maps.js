@@ -155,7 +155,7 @@ function initGMap() {
         '<h6>Sunday - Thursday &nbsp; &nbsp; 10am - 11pm</h6>' +
         '<h5>Address:</h5>' +
         '<h6>V15 Bath Rd, Heathrow, Longford, Hounslow TW6 2AB, UK<br>'+
-        '<br>Phone.  +44 171 127 8528<br>e-mail: perla.app@example.com</h6>'+
+        '<br>Phone.  +44 171 127 8528<br>e-mail: info@maitive.co</h6>'+
         '</div>'+
         '</div>';
 
