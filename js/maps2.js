@@ -1,28 +1,13 @@
-import 'ol/ol.css';
-import Map from 'ol/Map';
-import OSM, {ATTRIBUTION} from 'ol/source/OSM';
-import TileLayer from 'ol/layer/Tile';
-import View from 'ol/View';
-
-const openSeaMapLayer = new TileLayer({
-    source: new OSM({
-        attributions: [
-            'All maps © <a href="https://www.openseamap.org/">OpenSeaMap</a>',
-            ATTRIBUTION,
-        ],
-        opaque: false,
-        url: 'https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png',
-    }),
-});
-
-const map = new Map({
-    layers: [ openSeaMapLayer],
-    target: 'map',
-    view: new View({
-        maxZoom: 18,
-        center: [-244780.24508882355, 5986452.183179816],
-        zoom: 15,
-    }),
-});
-
-debugger
+setTimeout(()=>{
+    if(document.getElementById('map')){
+        var map = L.map('map').setView([39.799905, 29.105530], 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(map);
+        L.marker([40.999905, 29.105530]).addTo(map)
+            .bindPopup("Batı, Nida Kule, barbaros mahallesi, Begonya Sk. no:1,34746 Ataşehir/İstanbul").openPopup();
+    }
+},1000);
