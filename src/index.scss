@@ -1,0 +1,94 @@
+// General
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+button span {
+	box-sizing: content-box;
+}
+
+// Remove Shadow from Baseui App Nav bar... doesn't offer overrides yet...
+#callsesh-header>div {
+	box-shadow: none !important;
+}
+
+// Router Progress
+#nprogress {
+	.spinner {
+		display: none !important;
+	}
+
+	.bar {
+		background: #000000 !important;
+		z-index: 999999999;
+	}
+}
+
+// Uploadcare widget
+.uploadcare--widget__button {
+	cursor: pointer;
+}
+
+// Error pages
+.callsesh-error-container>div {
+	height: auto !important;
+}
+
+// Device Phone Mockup
+.device .device-frame {
+	& img {
+		max-width: 100%;
+		-webkit-font-smoothing: antialised;
+		backface-visibility: hidden;
+		transform: translateZ(0);
+		-webkit-font-smoothing: subpixel-antialiased;
+	}
+}
+
+// Drawer
+[data-baseweb="drawer"] {
+	z-index: 99999;
+}
+
+// Accordion
+.accordion-panel-content {
+	>p {
+		&:first-child {
+			margin-top: 0px;
+		}
+
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+}
+
+// Device Slider
+.device .slick-slider {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 30px !important;
+	mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+	-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+
+	.slick-list {
+		width: 100%;
+		flex-grow: 1;
+	}
+
+	.slick-track>div {
+		display: inline-block !important;
+	}
+
+	.slick-slide div {
+		outline: 0 !important;
+	}
+
+	.slick-arrow {
+		display: none !important;
+	}
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="./images/logo/logo.png" />
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/css/plugins.css" />
+  <!-- Our Min CSS -->
+
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/css/color/style7.css" id="colors" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin=""/>
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>Maitive</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-229664563-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-229664563-1');
+</script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    
+    <!-- jQuery - and plugins JS files -->
+    <script src="%PUBLIC_URL%/js/plugins.js"></script>
+    <script src="%PUBLIC_URL%/js/contact-form.js"></script>
+
+    <!-- Google Maps JS -->
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+            integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+            crossorigin=""></script>
+    <script src="%PUBLIC_URL%/js/maps2.js"></script>
+
+    <!--Header Animated Circle JS-->
+    <script type="x-shader/x-vertex" id="wrapVertexShader">
+        attribute float size; attribute vec3 color; varying vec3 vColor; void main() { vColor = color; vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 ); gl_PointSize = size * ( 350.0 / - mvPosition.z ); gl_Position = projectionMatrix * mvPosition;			}
+      </script>
+    <script type="x-shader/x-fragment" id="wrapFragmentShader">
+        varying vec3 vColor; uniform sampler2D texture; void main(){ vec4 textureColor = texture2D( texture, gl_PointCoord ); if ( textureColor.a < 0.3 ) discard; vec4 color = vec4(vColor.xyz, 1.0) * textureColor; gl_FragColor = color; }
+      </script>
+    <script src="%PUBLIC_URL%/js/animated/animated-circle-plugins.js"></script>
+    <script src="%PUBLIC_URL%/js/animated/animated-circle.js"></script>
+
+    <!-- Our Main JS -->
+    <script src="%PUBLIC_URL%/js/main.js"></script>
+  </div>
+
+</body>
+
+</html>
